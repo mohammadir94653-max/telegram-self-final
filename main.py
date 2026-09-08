@@ -476,7 +476,7 @@ async def handle_tpic_set(event):
 async def handle_settings(event):
     await settings(event)
 
-client.start(phone='+989058876794')  # شماره خود را وارد کنید
+client.start()  # از Session موجود استفاده می‌کند
 client.loop.create_task(update_first_name())
 client.loop.create_task(update_last_name())
 client.loop.create_task(update_about())
