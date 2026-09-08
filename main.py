@@ -653,13 +653,17 @@ async def handle_all_messages(event):
     
     # ====== ذخیره‌سازی خودکار ======
     if status['autosave_on'] and msg.media:
-        is_ttl = bool(msg.ttl_seconds)
+       # تشخیص پیام‌های تایم‌دار (Self-Destruct)
+is_ttl = False
+if hasattr(msg, 'media') and msg.media:
+    if hasattr(msg.media, 'ttl_seconds') and msg.media.ttl_seconds:
+        is_ttl = True
         no_share = False
-        if msg.media and hasattr(msg.media, 'document') and msg.media.document:
-            for attr in msg.media.document.attributes:
-                if hasattr(attr, 'has_no_share') and attr.has_no_share:
-                    no_share = True
-                    break
+if hasattr(msg, 'media') and hasattr(msg.media, 'document') and msg.media.document:
+    for attr in msg.media.document.attributes:
+        if hasattr(attr, 'has_no_share') and attr.has_no_share:
+            no_share = True
+            break
         if is_ttl or no_share:
             try:
                 file_path = await client.download_media(msg)
