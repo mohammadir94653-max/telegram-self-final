@@ -202,7 +202,7 @@ async def handle_delete_reply(event):
 async def handle_save_user_id(event):
     await save_user_id(event)
 
-@client.on(events.NewMessage(pattern='/GUnSilent(\s+\d+)?'))
+@client.on(events.NewMessage(pattern='/GUnSilent(\\s+\\d+)?'))
 async def handle_remove_user_from_silenced(event):
     await remove_user_from_silenced(event)
 
@@ -282,7 +282,7 @@ async def handle_get_football_stats(event):
 async def handle_apply_color_filter(event):
     await apply_color_filter(event)
 
-@client.on(events.NewMessage(pattern='/flood (\d+) - ([\w,]+)'))
+@client.on(events.NewMessage(pattern='/flood (\\d+) - ([\\w,]+)'))
 async def handle_flood_message(event):
     await flood_message(event)
 
