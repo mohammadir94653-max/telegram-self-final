@@ -1,5 +1,7 @@
 from .library import *
 
+import os
+PHONE_NUMBER = os.environ.get('PHONE_NUMBER', '')
 admin_user_id = 7268478044  # <--- آیدی عددی خودتان را اینجا وارد کنید
 api_id = 33684592  # <--- api_id خود را اینجا وارد کنید
 api_hash = '4ca8a596e43a3309f3f4cd04d427d3a1'  # <--- api_hash خود را اینجا وارد کنید
