@@ -46,7 +46,8 @@ from math import ceil
 from yt_dlp import YoutubeDL
 from spotipy.oauth2 import SpotifyClientCredentials
 from googlesearch import search
-from googletrans import LANGUAGES, Translator
+# from googletrans import LANGUAGES, Translator  # غیرفعال شد
+from deep_translator import GoogleTranslator
 from bs4 import BeautifulSoup
 from persiantools.jdatetime import JalaliDate
 from io import BytesIO
