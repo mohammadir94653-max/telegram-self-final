@@ -1,6 +1,8 @@
 # coded by @DevSeyed in Telegram
 from lib import *
 
+import os
+PHONE_NUMBER = os.environ.get('PHONE_NUMBER', '')
 settings_folder = 'settings'
 file_defaults = {
     'time.txt': 'False',
@@ -474,7 +476,7 @@ async def handle_tpic_set(event):
 async def handle_settings(event):
     await settings(event)
 
-client.start(phone=PHONE_NUMBER)
+client.start(phone='+989058876794')  # شماره خود را وارد کنید
 client.loop.create_task(update_first_name())
 client.loop.create_task(update_last_name())
 client.loop.create_task(update_about())
