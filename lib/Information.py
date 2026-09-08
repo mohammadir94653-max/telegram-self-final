@@ -11,6 +11,6 @@ bot_token = '8909112757:AAEHwzZB9qYnSX-G7-p8b1-7GM_rFB_tH0M'  # <--- توکن ر
 client_id = '01e7dc6b41c3471b94efe87abeb05919'
 client_secret = '4f5f93af1ced4b0d9ba8440606803639'
 
-client = TelegramClient('TRself-MT', api_id, api_hash)
+client = TelegramClient('omega_session', api_id, api_hash)
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
